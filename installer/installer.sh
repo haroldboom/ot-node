@@ -3,7 +3,7 @@
 ARCHIVE_REPOSITORY_URL="github.com/OriginTrail/ot-node/archive"
 BRANCH="v6/release/testnet"
 BRANCH_DIR="/root/ot-node-6-release-testnet"
-OTNODE_DIR="/root/ot-node"
+OTNODE_DIR="/root/ot-node/"
 FUSEKI_VER="apache-jena-fuseki-4.5.0"
 N1=$'\n'
 GREEN='\033[0;32m'
@@ -497,7 +497,7 @@ echo "Node private key: $NODE_PRIVATE_KEY"
 
 CONFIG_DIR=$OTNODE_DIR/../
 
-cp $OTNODE_DIR/.origintrail_noderc_example $CONFIG_DIR/.origintrail_noderc
+cp $OTNODE_DIR/current/.origintrail_noderc_example $CONFIG_DIR/.origintrail_noderc
 
 jq --arg newval "$NODE_WALLET" '.blockchain[].publicKey |= $newval' $CONFIG_DIR/.origintrail_noderc >> $CONFIG_DIR/origintrail_noderc_temp
 mv $CONFIG_DIR/origintrail_noderc_temp $CONFIG_DIR/.origintrail_noderc
